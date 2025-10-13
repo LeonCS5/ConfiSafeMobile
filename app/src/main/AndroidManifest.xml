@@ -18,15 +18,6 @@
             android:name=".epi_list"
             android:exported="false" />
         <activity
-            android:name=".activity_epi_list_tank"
-            android:exported="false" />
-        <activity
-            android:name=".activity_epi_list_cold_storage"
-            android:exported="false" />
-        <activity
-            android:name=".activity_epi_list_confined_space"
-            android:exported="false" />
-        <activity
             android:name=".list_item_epi"
             android:exported="false" />
         <activity

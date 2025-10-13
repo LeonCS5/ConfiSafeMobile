@@ -13,7 +13,7 @@
         android:id="@+id/epi_icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/ic_helmet"
+        android:src="@drawable/ic_epi_placeholder"
         app:tint="@color/icon_tint"/>
 
     <TextView
@@ -30,7 +30,7 @@
         android:id="@+id/epi_check"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/ic_check"
+        android:src="@drawable/ic_epi_placeholder"
         android:background="@drawable/icon_background_circle"
         android:padding="6dp"
         app:tint="@color/white"/>
