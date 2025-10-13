@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/edit_text_background">
+
+    <ImageView
+        android:id="@+id/epi_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_helmet"
+        app:tint="@color/icon_tint"/>
+
+    <TextView
+        android:id="@+id/epi_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Item EPI"
+        android:textColor="@color/text_dark"
+        android:textSize="16sp"/>
+
+    <ImageView
+        android:id="@+id/epi_check"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_check"
+        android:background="@drawable/icon_background_circle"
+        android:padding="6dp"
+        app:tint="@color/white"/>
+
+</LinearLayout>
