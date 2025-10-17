@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome"
+            android:text="Bem-Vindo"
             android:textColor="@color/text_light"
             android:textSize="18sp" />
 
@@ -46,14 +46,14 @@
             android:textColor="@color/text_dark"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:text="João Afonso da Silva" />
+            tools:text="Macoco" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
-            android:text="Select a Risk Area"
+            android:text="Selecione a Área de Risco que voçê vai entrar"
             android:textColor="@color/text_dark"
             android:textSize="18sp" />
 
@@ -62,8 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            tools:itemCount="3"
-            tools:listitem="@layout/item_risk_area" />
+            tools:itemCount="1"
+            tools:listitem="@layout/item_risk_area"/>
 
         <Button
             android:id="@+id/buttonSelect"
