@@ -2,19 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".Risk_Area_Activity">
+    tools:context=".Welcome">
 
-    <ImageView
-        android:id="@+id/back_arrow"
+    <ImageButton
+        android:id="@+id/buttonBack"
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="Voltar"
-        android:src="@drawable/ic_epi_placeholder"
+        android:contentDescription="@string/voltar"
+        android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_dark" />
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bem-Vindo"
+            android:text="@string/bem_vindo"
             android:textColor="@color/text_light"
             android:textSize="18sp" />
 
@@ -55,17 +55,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
-            android:text="Selecione a Área de Risco que você vai entrar"
+            android:text="@string/selecione_uma_op_o"
             android:textColor="@color/text_dark"
             android:textSize="18sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_risk_areas"
+        <Button
+            android:id="@+id/buttonRiskArea"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            tools:itemCount="1"
-            tools:listitem="@layout/item_risk_area" />
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_secondary_background"
+            android:text="@string/entrar_em_rea_de_risco"
+            android:textColor="@color/text_light"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/buttonEPIdanificado"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_secondary_background"
+            android:text="@string/epi_s_danificados"
+            android:textColor="@color/text_light"
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/buttonReport"
@@ -73,7 +85,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/button_secondary_background"
-            android:text="Report"
+            android:text="@string/reportar_acidente"
             android:textColor="@color/text_light"
             app:backgroundTint="@null" />
 

@@ -2,23 +2,24 @@ package com.example.confisafemobile
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.confisafemobile.databinding.ActivityLoginBinding
+import com.example.confisafemobile.databinding.ActivityWelcomeBinding
 
-class MainActivity : AppCompatActivity() {
+class Welcome : AppCompatActivity() {
 
-    // Declara a variável para o View Binding, que conecta o layout ao código.
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 1. Carrega o layout da tela de login (activity_login.xml)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 2. Acessa o botão 'buttonLogin', que EXISTE no layout de login
-        binding.buttonLogin.setOnClickListener {
+        binding.buttonBack.setOnClickListener {
             val intent = Intent(this, Risk_Area_Activity::class.java)
 
             // Executa a intenção, abrindo a nova tela.

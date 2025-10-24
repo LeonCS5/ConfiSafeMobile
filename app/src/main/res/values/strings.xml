@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ConfiSafeMobile</string>
+    <string name="voltar">Voltar</string>
+    <string name="bem_vindo">Bem-Vindo</string>
+    <string name="selecione_uma_op_o">Selecione uma opção</string>
+    <string name="entrar_em_rea_de_risco">Entrar em Área de Risco</string>
+    <string name="epi_s_danificados">EPI(s) Danificados</string>
+    <string name="reportar_acidente">Reportar Acidente</string>
 </resources>
