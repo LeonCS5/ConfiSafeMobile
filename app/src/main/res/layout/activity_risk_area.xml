@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".WelcomeActivity">
+    tools:context=".Risk_Area_Activity">
 
     <ImageView
         android:id="@+id/back_arrow"
@@ -60,20 +60,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_risk_areas"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             tools:itemCount="1"
             tools:listitem="@layout/item_risk_area"/>
-
-        <Button
-            android:id="@+id/buttonSelect"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/button_secondary_background"
-            android:text="Select"
-            android:textColor="@color/text_dark"
-            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/buttonReport"

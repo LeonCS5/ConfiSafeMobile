@@ -17,7 +17,7 @@ class EpiListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Nos próximos passos, adicionaremos o código aqui para:
-        // 1. Receber os dados da área de risco vindos da WelcomeActivity.
+        // 1. Receber os dados da área de risco vindos da Risk_Area_Activity.
         // 2. Usar esses dados para exibir a lista de EPIs correta.
     }
 }

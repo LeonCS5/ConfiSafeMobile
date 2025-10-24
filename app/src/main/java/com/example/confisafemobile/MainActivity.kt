@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         // 2. CORRETO: Acessa o botão 'buttonLogin', que EXISTE no layout de login
         binding.buttonLogin.setOnClickListener {
-            // Cria uma "intenção" (Intent) para abrir a tela WelcomeActivity.
-            val intent = Intent(this, WelcomeActivity::class.java)
+            // Cria uma "intenção" (Intent) para abrir a tela Risk_Area_Activity.
+            val intent = Intent(this, Risk_Area_Activity::class.java)
 
             // Executa a intenção, abrindo a nova tela.
             startActivity(intent)

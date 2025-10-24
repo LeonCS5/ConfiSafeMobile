@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Risk_Area_Activity"
             android:exported="false" />
 
         <activity
