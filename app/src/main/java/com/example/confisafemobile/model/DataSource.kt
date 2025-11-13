@@ -1,48 +1,47 @@
 package com.example.confisafemobile.model
 
-import com.example.confisafemobile.R // Importante para acessar os drawables
+import androidx.annotation.DrawableRes
+import com.example.confisafemobile.R
 
 object DataSource {
 
-    // Nosso único ícone "coringa" para absolutamente tudo.
+    @DrawableRes
     private val PLACEHOLDER_ICON = R.drawable.ic_epi_placeholder
 
-    fun loadRiskAreas(): List<RiskArea> {
-        return listOf(
-            RiskArea(
-                name = "Espaço Confinado",
-                iconResId = PLACEHOLDER_ICON, // Usando o coringa
-                requiredEpis = listOf(
-                    Epi("Capacete", PLACEHOLDER_ICON),
-                    Epi("Óculos de Proteção", PLACEHOLDER_ICON),
-                    Epi("Luvas de Proteção", PLACEHOLDER_ICON),
-                    Epi("Respirador com Linha de Ar", PLACEHOLDER_ICON),
-                    Epi("Detector de Gases", PLACEHOLDER_ICON),
-                    Epi("Cinto de Segurança", PLACEHOLDER_ICON)
-                )
-            ),
-            RiskArea(
-                name = "Câmara Fria",
-                iconResId = PLACEHOLDER_ICON, // Usando o coringa
-                requiredEpis = listOf(
-                    Epi("Jaqueta Térmica", PLACEHOLDER_ICON),
-                    Epi("Calça Térmica", PLACEHOLDER_ICON),
-                    Epi("Luvas Térmicas", PLACEHOLDER_ICON),
-                    Epi("Botas Térmicas", PLACEHOLDER_ICON),
-                    Epi("Gorro Térmico", PLACEHOLDER_ICON)
-                )
-            ),
-            RiskArea(
-                name = "Tanque Químico",
-                iconResId = PLACEHOLDER_ICON, // Usando o coringa
-                requiredEpis = listOf(
-                    Epi("Capacete com Protetor Facial", PLACEHOLDER_ICON),
-                    Epi("Macacão Químico", PLACEHOLDER_ICON),
-                    Epi("Luvas de PVC", PLACEHOLDER_ICON),
-                    Epi("Botas de Borracha", PLACEHOLDER_ICON),
-                    Epi("Respirador para Vapores", PLACEHOLDER_ICON)
-                )
-            )
+    // Lista mostrada em Risk_Area_Activity (adapter espera id + name)
+    fun loadRiskAreas(): List<RiskArea> = listOf(
+        RiskArea(id = "caldeira",    name = "Caldeira"),
+        RiskArea(id = "camara_fria", name = "Câmara Fria"),
+        RiskArea(id = "tanque",      name = "Tanque Químico")
+    )
+
+    // EPIs por local (usado pela EpiListActivity)
+    fun getEpisFor(areaId: String): List<Epi> = when (areaId) {
+        "caldeira" -> listOf(
+            Epi("Capacete",                R.drawable.ic_construction),
+            Epi("Óculos de Proteção",     R.drawable.ic_goggles),          // se não tiver: ic_eyeglasses
+            Epi("Luvas de Proteção",      R.drawable.ic_back_hand),
+            Epi("Respirador com Linha de Ar", R.drawable.ic_air_purifier), // respiratório
+            Epi("Detector de Gases",      R.drawable.ic_gas_meter),
+            Epi("Cinto de Segurança",     R.drawable.ic_safety_check),
         )
+
+        "camara_fria" -> listOf(
+            Epi("Jaqueta Térmica",        R.drawable.ic_health_and_safety),
+            Epi("Calça Térmica",          R.drawable.ic_verified_user),
+            Epi("Luvas Térmicas",         R.drawable.ic_back_hand),
+            Epi("Botas Térmicas",         R.drawable.ic_shield),
+            Epi("Gorro Térmico",          R.drawable.ic_shield_person),
+        )
+
+        "tanque" -> listOf(
+            Epi("Capacete com Protetor Facial", R.drawable.ic_construction),
+            Epi("Macacão Químico",        R.drawable.ic_science),
+            Epi("Luvas de PVC",           R.drawable.ic_back_hand),
+            Epi("Botas de Borracha",      R.drawable.ic_shield),
+            Epi("Respirador para Vapores",R.drawable.ic_air_purifier),
+        )
+
+        else -> emptyList()
     }
 }

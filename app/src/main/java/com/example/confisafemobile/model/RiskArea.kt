@@ -1,11 +1,11 @@
+// app/src/main/java/com/example/confisafemobile/model/RiskArea.kt
 package com.example.confisafemobile.model
 
-import kotlinx.parcelize.Parcelize
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class RiskArea(
-    val name: String,
-    val iconResId: Int,
-    val requiredEpis: List<Epi>
+    val id: String,   // "caldeira", "silo", "tanque"
+    val name: String  // "Caldeira", "Silo", "Tanque"
 ) : Parcelable
