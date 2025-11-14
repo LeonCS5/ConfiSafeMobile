@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Básico -->
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
 
-    <color name="app_background">#F5F5F5</color>
-    <color name="card_background">#FFFFFF</color>
-    <color name="primary_orange">#F9A825</color>
-    <color name="primary_orange_dark">#F57F17</color>
-    <color name="text_dark">#333333</color>
-    <color name="text_light">#757575</color>
-    <color name="input_background">#EEEEEE</color>
-    <color name="icon_tint">#555555</color>
+    <!-- Superfícies / Fundo -->
+    <color name="app_background">#F5F5F5</color>          <!-- já tinha -->
+    <color name="card_background">#FFFFFFFF</color>        <!-- já tinha -->
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_variant">#F3F5F7</color>
+    <color name="overlay">#CCFFFFFF</color>                <!-- branco 80% -->
+
+    <!-- Marca (primária laranja) -->
+    <color name="primary_orange">#F9A825</color>           <!-- já tinha (Amber 700) -->
+    <color name="primary_orange_dark">#F57F17</color>      <!-- já tinha (Amber 800) -->
+    <color name="primary_orange_light">#FFB300</color>     <!-- Amber 600 -->
+    <color name="on_primary">#FFFFFFFF</color>
+
+    <!-- Secundária (azul) para ações/info -->
+    <color name="secondary_blue">#1976D2</color>           <!-- Blue 700 -->
+    <color name="secondary_blue_dark">#1565C0</color>      <!-- Blue 800 -->
+    <color name="secondary_blue_light">#64B5F6</color>     <!-- Blue 300 -->
+    <color name="on_secondary">#FFFFFFFF</color>
+
+    <!-- Texto -->
+    <color name="text_dark">#333333</color>                <!-- já tinha -->
+    <color name="text_light">#757575</color>               <!-- já tinha -->
+    <color name="text_muted">#9E9E9E</color>
+    <color name="text_inverse">#FFFFFFFF</color>
+
+    <!-- Ícones -->
+    <color name="icon_tint">#555555</color>                <!-- já tinha -->
+    <color name="icon_tint_muted">#8A8A8A</color>
+    <color name="icon_tint_inverse">#FFFFFFFF</color>
+
+    <!-- Inputs -->
+    <color name="input_background">#EEEEEE</color>         <!-- já tinha -->
+    <color name="input_border">#E0E0E0</color>
+    <color name="input_focus">#1976D2</color>              <!-- secundária -->
+    <color name="input_error">#D32F2F</color>
+
+    <!-- Neutros (escala curta) -->
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="gray_600">#757575</color>
+    <color name="gray_800">#424242</color>
+
+    <!-- Semânticos -->
+    <color name="success">#2E7D32</color>                  <!-- Green 800 -->
+    <color name="success_dark">#1B5E20</color>
+    <color name="success_bg">#E8F5E9</color>               <!-- fundo para chips/alerts -->
+    <color name="warning">#F9A825</color>                  <!-- igual primária -->
+    <color name="warning_dark">#F57F17</color>
+    <color name="warning_bg">#FFF8E1</color>
+    <color name="error">#D32F2F</color>                    <!-- Red 700 -->
+    <color name="error_dark">#B71C1C</color>
+    <color name="error_bg">#FFEBEE</color>
+    <color name="info">#0288D1</color>                     <!-- Light Blue 700 -->
+    <color name="info_dark">#01579B</color>
+    <color name="info_bg">#E1F5FE</color>
+
+    <!-- Estados -->
+    <color name="disabled_text">#9E9E9E</color>
+    <color name="disabled_bg">#E0E0E0</color>
+    <color name="ripple_light">#1F000000</color>           <!-- preto 12% -->
+    <color name="ripple_dark">#14FFFFFF</color>            <!-- branco ~8% -->
+
+    <!-- Tintas por categoria (para ícones/etiquetas de áreas) -->
+    <color name="risk_heat">#FF7043</color>                <!-- Deep Orange 400 (Caldeira) -->
+    <color name="risk_cold">#29B6F6</color>                <!-- Light Blue 400 (Câmara fria) -->
+    <color name="risk_chem">#7E57C2</color>                <!-- Deep Purple 400 (Tanque químico) -->
+
+    <!-- Gradiente opcional p/ headers/botões -->
+    <color name="gradient_primary_start">#F9A825</color>
+    <color name="gradient_primary_end">#FF8F00</color>
+
 </resources>

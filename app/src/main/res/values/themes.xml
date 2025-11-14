@@ -1,9 +1,16 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ConfiSafeMobile" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema da aplicação (Material 3, sem ActionBar) -->
+    <style name="Theme.ConfiSafeMobile" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Opcional: mapeie suas cores para os roles do tema -->
+        <item name="colorPrimary">@color/primary_orange</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
 
-    <style name="Theme.ConfiSafeMobile" parent="Base.Theme.ConfiSafeMobile" />
+        <item name="colorSecondary">@color/secondary_blue</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+
+        <!-- Barras do sistema (opcional) -->
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
 </resources>

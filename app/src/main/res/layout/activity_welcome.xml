@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".Welcome">
 
     <ImageButton
@@ -17,13 +19,13 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/text_dark" />
+        app:tint="@color/icon_tint" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="?attr/actionBarSize"
-        android:background="@drawable/background_card"
+        android:background="@color/card_background"
         android:orientation="vertical"
         android:padding="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,35 +61,41 @@
             android:textColor="@color/text_dark"
             android:textSize="18sp" />
 
-        <Button
+        <!-- Primário (ação principal) -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonRiskArea"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/button_secondary_background"
             android:text="@string/entrar_em_rea_de_risco"
-            android:textColor="@color/text_light"
-            app:backgroundTint="@null" />
+            android:textColor="@color/on_primary"
+            app:backgroundTint="@color/primary_orange"
+            app:cornerRadius="16dp" />
 
-        <Button
+        <!-- Secundário (info/apoio) -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonEPIdanificado"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/button_secondary_background"
             android:text="@string/epi_s_danificados"
-            android:textColor="@color/text_light"
-            app:backgroundTint="@null" />
+            android:textColor="@color/on_secondary"
+            app:backgroundTint="@color/secondary_blue"
+            app:cornerRadius="16dp" />
 
-        <Button
+        <!-- Destrutivo/urgente -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonReport"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/button_secondary_background"
             android:text="@string/reportar_acidente"
-            android:textColor="@color/text_light"
-            app:backgroundTint="@null" />
+            android:textColor="@color/text_inverse"
+            app:backgroundTint="@color/error"
+            app:cornerRadius="16dp" />
 
     </LinearLayout>
 
