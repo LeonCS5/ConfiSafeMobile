@@ -1,49 +1,66 @@
 package com.example.confisafemobile
 
+import android.net.Uri
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.confisafemobile.databinding.ActivityEpiDanificadoBinding
-import com.example.confisafemobile.model.Epi
-import com.example.confisafemobile.ui.EpiAdapter
 
 class EpiDanificado : AppCompatActivity() {
 
     private lateinit var binding: ActivityEpiDanificadoBinding
-    private val adapter by lazy { EpiAdapter() }
+    private var photoUri: Uri? = null
+
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        uri?.let {
+            photoUri = it
+            binding.ivPreview.setImageURI(it)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEpiDanificadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Navegação
-        binding.backArrow.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
+        // Voltar
+        binding.backArrow.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
-        // Lista
-        binding.rvEpiDanificado.layoutManager = LinearLayoutManager(this)
-        binding.rvEpiDanificado.adapter = adapter
-
-        // EPIs básicos (você pode puxar de um DataSource depois)
-        val lista = listOf(
-            Epi("Capacete",                R.drawable.ic_construction),
-            Epi("Óculos de Proteção",     R.drawable.ic_goggles),         // use ic_eyeglasses se preferir
-            Epi("Luvas de Proteção",      R.drawable.ic_back_hand),
-            Epi("Respirador",             R.drawable.ic_air_purifier),
-            Epi("Detector de Gases",      R.drawable.ic_gas_meter),
-            Epi("Cinto de Segurança",     R.drawable.ic_safety_check),
+        // Dropdown de EPIs (ArrayAdapter padrão)
+        val epis = arrayOf(
+            "Capacete","Óculos de Proteção","Luvas de Proteção","Respirador",
+            "Detector de Gases","Cinto de Segurança","Jaqueta Térmica","Calça Térmica",
+            "Luvas Térmicas","Botas Térmicas","Gorro Térmico","Macacão Químico",
+            "Luvas de PVC","Botas de Borracha"
         )
-        adapter.submitList(lista)
+        binding.inputEpi.setAdapter(ArrayAdapter(this, android.R.layout.simple_list_item_1, epis))
 
-        // Botões (placeholder)
-        binding.buttonAddPhoto.setOnClickListener {
-            Toast.makeText(this, "Adicionar foto (TODO)", Toast.LENGTH_SHORT).show()
-        }
-        binding.buttonReportDamaged.setOnClickListener {
-            Toast.makeText(this, "Reportar EPI danificado (TODO)", Toast.LENGTH_SHORT).show()
+        // Foto
+        binding.btnAddFoto.setOnClickListener { pickImage.launch("image/*") }
+
+        // Enviar
+        binding.btnEnviar.setOnClickListener {
+            val epi  = binding.inputEpi.text?.toString().orEmpty()
+            val area = binding.inputArea.text?.toString().orEmpty()
+            val desc = binding.inputDescricao.text?.toString().orEmpty()
+            val grav = when (binding.rgGravity.checkedRadioButtonId) {
+                binding.rbHigh.id -> "Alta"
+                binding.rbMed.id  -> "Média"
+                binding.rbLow.id  -> "Baixa"
+                else              -> ""
+            }
+
+            if (epi.isBlank() || area.isBlank() || desc.isBlank() || grav.isBlank()) {
+                Toast.makeText(this, "Preencha todos os campos.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // TODO: enviar para backend
+            Toast.makeText(this, "Enviado: $epi / $area / $grav", Toast.LENGTH_LONG).show()
+            finish()
         }
     }
 }
+

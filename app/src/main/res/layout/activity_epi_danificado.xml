@@ -2,95 +2,157 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".EpiDanificado">
+    android:background="@color/app_background">
 
-    <ImageView
-        android:id="@+id/back_arrow"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+    <ImageButton
+        android:id="@+id/backArrow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
         android:contentDescription="@string/voltar"
         android:src="@drawable/ic_arrow_back"
-        app:tint="@color/text_dark"
+        app:tint="@color/icon_tint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- CONTEÚDO -->
     <LinearLayout
+        android:id="@+id/content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:background="@drawable/background_card"
-        android:orientation="vertical"
-        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/backArrow"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@android:color/transparent">
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EPI Danificado"
-            android:textColor="@color/text_dark"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:text="EPI(s) Danificados"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"/>
 
+        <!-- Qual EPI -->
         <TextView
-            android:id="@+id/tv_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Selecione o EPI com problema"
-            android:textColor="@color/text_light"
-            android:textSize="16sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_epi_danificado"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            tools:itemCount="3"
-            tools:listitem="@layout/list_item_epi" />
+            android:text="Qual EPI?"
+            android:textColor="@color/text_dark" />
 
-        <LinearLayout
+        <AutoCompleteTextView
+            android:id="@+id/inputEpi"
             android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            android:hint="Selecione"
+            android:inputType="none" />
+
+        <!-- Local / Área -->
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:text="Local / Área"
+            android:textColor="@color/text_dark" />
+
+        <EditText
+            android:id="@+id/inputArea"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            android:hint="Ex.: Tanque 3"
+            android:inputType="text" />
+
+        <!-- Gravidade -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Gravidade"
+            android:textColor="@color/text_dark" />
+
+        <RadioGroup
+            android:id="@+id/rgGravity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/buttonAddPhoto"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_secondary_background"
-                android:text="Adicionar Foto"
-                android:textColor="@color/text_light"
-                app:backgroundTint="@null" />
+            <RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Baixa" />
 
-            <Space
-                android:layout_width="12dp"
-                android:layout_height="1dp" />
+            <RadioButton
+                android:id="@+id/rbMed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Média" />
 
-            <Button
-                android:id="@+id/buttonReportDamaged"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="@color/error"
-                android:text="Reportar"
-                android:textColor="@color/text_inverse"
-                app:backgroundTint="@null" />
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/rbHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Alta" />
+        </RadioGroup>
+
+        <!-- Descrição (altura fixa como você tinha) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Descrição"
+            android:textColor="@color/text_dark" />
+
+        <EditText
+            android:id="@+id/inputDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="top|start"
+            android:hint="Descreva o dano"
+            android:inputType="textMultiLine"
+            android:padding="12dp" />
+
+        <!-- Foto -->
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/input_background"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
+
+        <Button
+            android:id="@+id/btnAddFoto"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_secondary_background"
+            android:text="Adicionar foto"
+            android:textColor="@color/on_secondary" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_primary_background"
+            android:text="Enviar"
+            android:textColor="@color/on_primary" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
