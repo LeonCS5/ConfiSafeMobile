@@ -38,7 +38,6 @@ class EpiDanificado : AppCompatActivity() {
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, epis)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
         binding.inputEpi.adapter = adapter
 
         // Foto
@@ -47,7 +46,7 @@ class EpiDanificado : AppCompatActivity() {
         // Enviar
         binding.btnEnviar.setOnClickListener {
             val epi = binding.inputEpi.selectedItem.toString()
-            val area = binding.inputArea.text?.toString().orEmpty()
+            val area = binding.inputArea.selectedItem.toString()
             val desc = binding.inputDescricao.text?.toString().orEmpty()
             val grav = when (binding.rgGravity.checkedRadioButtonId) {
                 binding.rbHigh.id -> "Alta"

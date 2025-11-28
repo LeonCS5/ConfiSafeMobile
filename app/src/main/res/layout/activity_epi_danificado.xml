@@ -41,6 +41,23 @@
             android:textStyle="bold"
             android:textColor="@color/text_dark"/>
 
+        <!-- Local / Área -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Local / Área"
+            android:textColor="@color/text_dark" />
+
+        <Spinner
+            android:id="@+id/inputArea"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            android:hint="Ex.: Tanque 3"
+            android:inputType="text" />
+
         <!-- Qual EPI -->
         <TextView
             android:layout_width="wrap_content"
@@ -49,8 +66,6 @@
             android:text="Qual EPI?"
             android:textColor="@color/text_dark" />
 
-
-        <!-- Local / Área -->
         <Spinner
             android:id="@+id/inputEpi"
             android:layout_width="match_parent"
@@ -62,22 +77,6 @@
             android:clickable="true"
             android:visibility="visible"
             tools:visibility="visible" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Local / Área"
-            android:textColor="@color/text_dark" />
-
-        <EditText
-            android:id="@+id/inputArea"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_background"
-            android:padding="10dp"
-            android:hint="Ex.: Tanque 3"
-            android:inputType="text" />
 
         <!-- Gravidade -->
         <TextView
