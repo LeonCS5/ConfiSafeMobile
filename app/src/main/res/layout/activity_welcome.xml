@@ -71,7 +71,7 @@
             android:text="@string/entrar_em_rea_de_risco"
             android:textColor="@color/on_primary"
             app:backgroundTint="@color/primary_orange"
-            app:cornerRadius="16dp" />
+            app:cornerRadius="12dp" />
 
         <!-- Secundário (info/apoio) -->
         <com.google.android.material.button.MaterialButton
@@ -83,7 +83,7 @@
             android:text="@string/epi_s_danificados"
             android:textColor="@color/on_secondary"
             app:backgroundTint="@color/secondary_blue"
-            app:cornerRadius="16dp" />
+            app:cornerRadius="12dp" />
 
         <!-- Destrutivo/urgente -->
         <com.google.android.material.button.MaterialButton
@@ -95,7 +95,7 @@
             android:text="@string/reportar_acidente"
             android:textColor="@color/text_inverse"
             app:backgroundTint="@color/error"
-            app:cornerRadius="16dp" />
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 

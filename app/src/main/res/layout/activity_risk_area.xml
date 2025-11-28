@@ -67,15 +67,17 @@
             tools:itemCount="1"
             tools:listitem="@layout/item_risk_area" />
 
-        <Button
+        <!-- Destrutivo/urgente -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonReport"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/button_secondary_background"
-            android:text="Report"
-            android:textColor="@color/text_light"
-            app:backgroundTint="@null" />
+            android:text="@string/reportar_acidente"
+            android:textColor="@color/text_inverse"
+            app:backgroundTint="@color/error"
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 

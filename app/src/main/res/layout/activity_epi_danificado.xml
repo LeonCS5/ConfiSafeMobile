@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
-        android:padding="12dp"
+        android:padding="20dp"
         android:background="@android:color/transparent">
 
         <TextView
@@ -44,24 +45,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:text="Qual EPI?"
             android:textColor="@color/text_dark" />
 
-        <AutoCompleteTextView
+
+        <!-- Local / Área -->
+        <Spinner
             android:id="@+id/inputEpi"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/edit_text_background"
-            android:padding="10dp"
             android:hint="Selecione"
-            android:inputType="none" />
+            android:padding="10dp"
+            android:enabled="true"
+            android:clickable="true"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
-        <!-- Local / Área -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:text="Local / Área"
             android:textColor="@color/text_dark" />
 
@@ -78,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:text="Gravidade"
             android:textColor="@color/text_dark" />
 
@@ -109,7 +114,7 @@
                 android:text="Alta" />
         </RadioGroup>
 
-        <!-- Descrição (altura fixa como você tinha) -->
+        <!-- Descrição -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
