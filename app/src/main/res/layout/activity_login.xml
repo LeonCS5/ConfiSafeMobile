@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/edit_text_background"
-        android:inputType="text"
+        android:inputType="number"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:importantForAutofill="no" />

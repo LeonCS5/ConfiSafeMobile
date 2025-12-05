@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "561316216854",
+    "project_id": "confisafe-m",
+    "storage_bucket": "confisafe-m.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561316216854:android:967bf6c3e95e23b34cf537",
+        "android_client_info": {
+          "package_name": "com.example.confisafemobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjj11pT46SLCuzOUjeo-rbq5KcCKr2GQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
