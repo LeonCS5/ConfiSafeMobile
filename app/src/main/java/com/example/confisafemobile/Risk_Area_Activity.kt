@@ -91,5 +91,9 @@ class Risk_Area_Activity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Erro ao carregar áreas: ${e.message}", Toast.LENGTH_LONG).show()
             }
+
+        binding.buttonReport.setOnClickListener {
+            startActivity(Intent(this, ReportActivity::class.java))
+        }
     }
 }

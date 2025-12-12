@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ALERTA DE ACIDENTE"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"/>
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="#333333"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="Repórter: Macoco" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione a área e a gravidade para alertar a equipe imediatamente."
+            android:textColor="#666666"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Onde ocorreu?"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="24dp">
+
+            <Spinner
+                android:id="@+id/spinnerAreas"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:padding="8dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gravidade:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgGravidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/rbLeve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Leve"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/rbModerado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Médio"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/rbGrave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GRAVE"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                android:layout_weight="1"/>
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="O que houve? (Opcional)"
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTituloAcidente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnEnviarReport"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="EMITIR ALERTA AGORA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:backgroundTint="#D32F2F"/>
+
+    </LinearLayout>
+</ScrollView>

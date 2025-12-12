@@ -1,5 +1,6 @@
 package com.example.confisafemobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -69,6 +70,23 @@ class EpiListActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Erro: Área não identificada", Toast.LENGTH_SHORT).show()
         }
+
+        binding.buttonReport.setOnClickListener {
+            startActivity(Intent(this, ReportActivity::class.java))
+        }
+
+        // Dentro da EpiListActivity.kt
+        binding.buttonGrantAccess.setOnClickListener {
+            // Abre a tela do Cronômetro
+            val intent = Intent(this, AccessControlActivity::class.java)
+
+            // Passa os dados corretos
+            intent.putExtra("nome_area", areaName) // Passa o nome da área
+            intent.putExtra("id_area", areaId)     // Passa o ID da área
+
+            startActivity(intent)
+            finish() // Fecha a lista de EPIs
+        }
     }
 
     private fun carregarEpisDoFirebase(areaId: String) {
@@ -100,6 +118,7 @@ class EpiListActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Erro ao carregar: ${e.message}", Toast.LENGTH_LONG).show()
             }
+
     }
 
     // Busca o ID da imagem pelo nome (texto)
@@ -108,4 +127,6 @@ class EpiListActivity : AppCompatActivity() {
         // Retorna ícone padrão se não encontrar
         return if (id != 0) id else com.example.confisafemobile.R.drawable.ic_epi_placeholder
     }
+
+
 }

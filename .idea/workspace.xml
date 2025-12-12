@@ -18,6 +18,11 @@
           <theme>@style/Theme.ConfiSafeMobile</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_warning_border.xml">
+        <config>
+          <theme>@style/Theme.ConfiSafeMobile</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_primary_background.xml">
         <config>
           <theme>@style/Theme.ConfiSafeMobile</theme>
@@ -68,11 +73,6 @@
           <theme>@style/Theme.ConfiSafeMobile</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_googles.xml">
-        <config>
-          <theme>@style/Theme.ConfiSafeMobile</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_gpp_bad.xml">
         <config>
           <theme>@style/Theme.ConfiSafeMobile</theme>
@@ -93,6 +93,11 @@
           <theme>@style/Theme.ConfiSafeMobile</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_access_control.xml">
+        <config>
+          <theme>@style/Theme.ConfiSafeMobile</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_epi_danificado.xml">
         <config>
           <theme>@style/Theme.ConfiSafeMobile</theme>
@@ -104,6 +109,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+        <config>
+          <theme>@style/Theme.ConfiSafeMobile</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
         <config>
           <theme>@style/Theme.ConfiSafeMobile</theme>
         </config>
@@ -135,19 +145,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec584ffe-ea9a-4a86-a792-d8352b2d225c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/AccessControlActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/ReportActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_warning_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_access_control.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/EpiDanificado.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/EpiDanificado.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/EpiListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/EpiListActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/Risk_Area_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/Risk_Area_Activity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/Welcome.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/confisafemobile/Welcome.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_goggles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_goggles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_epi_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_epi_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons-staging/ic_goggles.svg" beforeDir="false" afterPath="$PROJECT_DIR$/icons-staging/ic_goggles.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +168,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Muffin\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RQ8X502FJNJ)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -194,6 +205,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Muffin\.gradle\wrapper\dists\gradle-8.2-all\6mxqtxovn2faat1idb7p6lxsa\gradle-8.2" javaHome="C:\Users\Muffin\.jdks\ms-17.0.17" gradleVersion="8.2" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -231,6 +243,11 @@
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "editor.preferences.tabs"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="PsdUISettings">
@@ -251,7 +268,11 @@
     <key name="android.template.1638377975">
       <recent name="com.example.confisafemobile" />
     </key>
+    <key name="android.template.-154064674">
+      <recent name="com.example.confisafemobile" />
+    </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.example.confisafemobile" />
       <recent name="com.example.confisafemobile.adapter" />
       <recent name="com.example.confisafemobile.model" />
     </key>
@@ -345,12 +366,12 @@
       <map>
         <entry key="com.example.confisafemobile">
           <value>
-            <CheckInfo lastCheckTimestamp="1764892644095" />
+            <CheckInfo lastCheckTimestamp="1765506717985" />
           </value>
         </entry>
         <entry key="com.example.confisafemobile.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1764892644095" />
+            <CheckInfo lastCheckTimestamp="1765506718026" />
           </value>
         </entry>
       </map>

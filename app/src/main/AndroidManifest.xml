@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -9,34 +10,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ConfiSafeMobile">
-
-        <!-- Launcher atual (mantenho como você já tinha) -->
+        <activity
+            android:name=".AccessControlActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportActivity"
+            android:exported="false" /> <!-- Launcher atual (mantenho como você já tinha) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                <action android:name="android.intent.action.MAIN" />
 
-        <!-- Telas internas -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Telas internas -->
         <activity
             android:name=".Welcome"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Risk_Area_Activity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".EpiListActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".EpiDanificado"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
-<!--        <activity-->
-<!--            android:name=".ReportAccidentActivity"-->
-<!--            android:exported="false"-->
-<!--            android:windowSoftInputMode="adjustResize"/>-->
+            android:windowSoftInputMode="adjustResize" />
     </application>
+
 </manifest>
