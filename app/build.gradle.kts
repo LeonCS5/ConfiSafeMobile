@@ -2,17 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-parcelize")
-    alias(libs.plugins.google.gms.google.services) //
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.example.confisafemobile"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.confisafemobile"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -42,15 +42,12 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    // Mude APENAS o número da versão aqui para 33.1.0
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
-    // Não coloque números de versão nesta linha de baixo, deixe sem!
     implementation("com.google.firebase:firebase-auth")
     implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
