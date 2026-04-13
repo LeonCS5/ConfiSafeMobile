@@ -34,6 +34,18 @@ O **ConfiSafeMobile** é uma solução Android robusta voltada para a gestão de
 *   **Build System:** Gradle (Kotlin DSL).
 *   **Min SDK:** 24 (Android 7.0) | **Target SDK:** 35 (Android 15).
 
+## ⚠️ Checklist de Requisitos (Evite Erros)
+
+Se o projeto não compilar ou o app crashar ao abrir, verifique os pontos abaixo:
+
+1.  **Arquivo `google-services.json`:** Certifique-se de que o arquivo baixado do console do Firebase foi colocado dentro da pasta `/app`. Sem ele, o app não inicia.
+2.  **Versão do Android Studio:** Use o **Android Studio Ladybug (2024.2.1)** ou superior. Versões antigas podem ter problemas com o Gradle 8.9 e o Kotlin 2.0.
+3.  **Configuração do Java (JDK):** O Gradle deve estar configurado para usar o **Java 17 ou 21**. Verifique em `Settings > Build, Execution, Deployment > Build Tools > Gradle`.
+4.  **Emulador (AVD):**
+    *   Se o emulador fechar sozinho, use a opção **"Wipe Data"** no Device Manager.
+    *   Recomenda-se o uso da **API 34 ou 35** para maior estabilidade.
+    *   Garanta que seu PC tenha pelo menos 8GB de RAM livres para rodar o emulador e a IDE simultaneamente.
+
 ## ⚙️ Configuração e Instalação
 
 ### Pré-requisitos
