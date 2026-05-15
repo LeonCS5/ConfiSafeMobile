@@ -1,35 +1,63 @@
-// app/src/main/java/com/example/confisafemobile/Risk_Area_Activity.kt
 package com.example.confisafemobile
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast // Import necessário para mensagens de erro
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.confisafemobile.adapter.RiskAreaAdapter
 import com.example.confisafemobile.databinding.ActivityRiskAreaBinding
-import com.example.confisafemobile.model.RiskArea // Importante: certifique-se que este import está aqui
-// import com.example.confisafemobile.model.DataSource <-- Não precisamos mais deste
+import com.example.confisafemobile.model.RiskArea
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+/**
+ * TELA DE SELEÇÃO DE ÁREAS DE RISCO:
+ * Lista todas as áreas cadastradas no Firestore. Ao clicar em uma área,
+ * o usuário é direcionado para a lista de EPIs específicos daquele local.
+ */
 class Risk_Area_Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRiskAreaBinding
     private lateinit var adapter: RiskAreaAdapter
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Inicializa ViewBinding
         binding = ActivityRiskAreaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Inicializa instâncias do Firebase
         auth = FirebaseAuth.getInstance()
-        val db = FirebaseFirestore.getInstance() // Inicializa Banco de Dados
+        db = FirebaseFirestore.getInstance()
 
+        // --- CONFIGURAÇÃO DA UI ---
+        configurarRecyclerView()
+        configurarDadosDoUsuario()
+        
+        // --- NAVEGAÇÃO ---
+        binding.backArrow.setOnClickListener { 
+            // Usa o dispatcher moderno para voltar a tela
+            onBackPressedDispatcher.onBackPressed() 
+        }
+
+        binding.buttonReport.setOnClickListener {
+            startActivity(Intent(this, ReportActivity::class.java))
+        }
+
+        // --- CARREGAMENTO DE DADOS ---
+        buscarAreasNoFirestore()
+    }
+
+    /**
+     * Recupera o e-mail do usuário logado e busca o nome real no banco.
+     */
+    private fun configurarDadosDoUsuario() {
         val usuarioAtual = auth.currentUser
-
-        // --- PARTE DO NOME (MANTIDA IGUAL) ---
         if (usuarioAtual != null) {
             val idFuncionario = usuarioAtual.email?.substringBefore("@") ?: ""
 
@@ -37,7 +65,7 @@ class Risk_Area_Activity : AppCompatActivity() {
                 .addOnSuccessListener { documento ->
                     if (documento.exists()) {
                         val nomeReal = documento.getString("nome")
-                        binding.tvUserName.text = "$nomeReal"
+                        binding.tvUserName.text = nomeReal
                     } else {
                         binding.tvUserName.text = "Func: $idFuncionario"
                     }
@@ -46,54 +74,54 @@ class Risk_Area_Activity : AppCompatActivity() {
                     binding.tvUserName.text = "Func: $idFuncionario"
                 }
         }
-        // --- FIM DA PARTE DO NOME ---
+    }
 
-        // seta voltar
-        binding.backArrow.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
-
-        // Adapter com clique que abre a tela de EPIs passando os extras
+    /**
+     * Prepara a lista (RecyclerView) e define o que acontece ao clicar em um item.
+     */
+    private fun configurarRecyclerView() {
+        // Inicializa o adapter com uma função de clique (lambda)
         adapter = RiskAreaAdapter { area ->
-            val i = Intent(this, EpiListActivity::class.java).apply {
+            // Ao clicar, abre a EpiListActivity passando o ID e Nome da área via Intent
+            val intent = Intent(this, EpiListActivity::class.java).apply {
                 putExtra(EpiListActivity.EXTRA_AREA_ID, area.id)
                 putExtra(EpiListActivity.EXTRA_AREA_NAME, area.name)
             }
-            startActivity(i)
+            startActivity(intent)
         }
 
+        // Define o gerenciador de layout (Lista Vertical)
         binding.rvRiskAreas.layoutManager = LinearLayoutManager(this)
         binding.rvRiskAreas.adapter = adapter
+    }
 
-        // --- MUDANÇA AQUI: SUBSTITUÍMOS O DATASOURCE PELO FIREBASE ---
-
-        // Vai buscar a coleção "areas" que você criou no site
+    /**
+     * Busca a coleção "areas" na nuvem.
+     * Cada documento representa um setor da empresa (Ex: Elétrica, Altura).
+     */
+    private fun buscarAreasNoFirestore() {
         db.collection("areas")
             .get()
             .addOnSuccessListener { documentos ->
-
                 val listaDeAreas = mutableListOf<RiskArea>()
 
                 for (doc in documentos) {
-                    // Pega os campos do documento
+                    // Mapeia os dados do Firebase para o objeto RiskArea do Kotlin
                     val id = doc.getString("id") ?: ""
-                    val nome = doc.getString("nome") ?: "Sem Nome"
-
-                    // Adiciona à lista
+                    val nome = doc.getString("nome") ?: "Área sem Nome"
                     listaDeAreas.add(RiskArea(id, nome))
                 }
 
                 if (listaDeAreas.isEmpty()) {
-                    Toast.makeText(this, "Nenhuma área encontrada.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Nenhuma área cadastrada no sistema.", Toast.LENGTH_SHORT).show()
                 }
 
-                // Atualiza o RecyclerView com a lista que veio da nuvem
+                // Envia a lista para o adapter atualizar a tela automaticamente
                 adapter.submitList(listaDeAreas)
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Erro ao carregar áreas: ${e.message}", Toast.LENGTH_LONG).show()
+                Log.e("FIRESTORE_ERROR", "Erro ao carregar áreas: ${e.message}")
+                Toast.makeText(this, "Falha na conexão com o banco de dados.", Toast.LENGTH_SHORT).show()
             }
-
-        binding.buttonReport.setOnClickListener {
-            startActivity(Intent(this, ReportActivity::class.java))
-        }
     }
 }

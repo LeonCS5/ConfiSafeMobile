@@ -20,10 +20,8 @@ O **ConfiSafeMobile** é uma solução Android robusta voltada para a gestão de
   <img width="395" height="871" alt="EPI List" src="https://github.com/user-attachments/assets/03f0da55-0ac9-466f-8f57-9273bca3a271" />
   <img width="392" height="870" alt="Risk Area" src="https://github.com/user-attachments/assets/f7248bc4-e4cd-4b8b-b62d-ed6f261c7caa" />
   <img width="394" height="869" alt="Damaged EPI" src="https://github.com/user-attachments/assets/a76c5129-2e1a-4caa-abab-1aa53a7b3b63" />
-  
   <img width="393" height="870" alt="Access Control" src="https://github.com/user-attachments/assets/58bce5ea-ef67-40d1-87a1-1056b8799d9a" />
   <img width="395" height="865" alt="Report" src="https://github.com/user-attachments/assets/63aa44a1-39ee-458d-8955-8acaa91d5fdf" />
-  
   <img width="391" height="872" alt="Details" src="https://github.com/user-attachments/assets/75a72d4a-0907-4ccd-963e-f902f789f27f" />
   <img width="393" height="871" alt="Profile" src="https://github.com/user-attachments/assets/a8b65561-5ae3-495c-adde-a66a0b35ae05" />
 </div>
@@ -35,6 +33,18 @@ O **ConfiSafeMobile** é uma solução Android robusta voltada para a gestão de
 *   **Backend & Cloud:** [Firebase](https://firebase.google.com/) (Firestore e Authentication).
 *   **Build System:** Gradle (Kotlin DSL).
 *   **Min SDK:** 24 (Android 7.0) | **Target SDK:** 35 (Android 15).
+
+## ⚠️ Checklist de Requisitos (Evite Erros)
+
+Se o projeto não compilar ou o app crashar ao abrir, verifique os pontos abaixo:
+
+1.  **Arquivo `google-services.json`:** Certifique-se de que o arquivo baixado do console do Firebase foi colocado dentro da pasta `/app`. Sem ele, o app não inicia.
+2.  **Versão do Android Studio:** Use o **Android Studio Ladybug (2024.2.1)** ou superior. Versões antigas podem ter problemas com o Gradle 8.9 e o Kotlin 2.0.
+3.  **Configuração do Java (JDK):** O Gradle deve estar configurado para usar o **Java 17 ou 21**. Verifique em `Settings > Build, Execution, Deployment > Build Tools > Gradle`.
+4.  **Emulador (AVD):**
+    *   Se o emulador fechar sozinho, use a opção **"Wipe Data"** no Device Manager.
+    *   Recomenda-se o uso da **API 34 ou 35** para maior estabilidade.
+    *   Garanta que seu PC tenha pelo menos 8GB de RAM livres para rodar o emulador e a IDE simultaneamente.
 
 ## ⚙️ Configuração e Instalação
 
