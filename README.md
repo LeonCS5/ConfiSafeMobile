@@ -13,17 +13,31 @@ O **ConfiSafeMobile** é uma solução Android robusta voltada para a gestão de
 
 ## 📸 Demonstração do App
 
+Abaixo, apresentamos o fluxo principal do aplicativo e suas interfaces:
+
+1.  **Tela de Login:** Acesso seguro do funcionário utilizando ID e senha integrados ao Firebase Auth.
+2.  **Boas-vindas:** Interface personalizada que identifica o nome do colaborador logado através do Firestore.
+3.  **Menu Principal (Dashboard):** Painel central intuitivo para navegação rápida entre as ferramentas de segurança.
+4.  **Lista de EPIs por Área:** Exibição organizada dos equipamentos obrigatórios para o setor selecionado.
+5.  **Áreas de Risco:** Catálogo de setores da empresa com indicação de periculosidade.
+6.  **Informar EPI Danificado:** Formulário inteligente para reporte de danos com lógica de filtros por área.
+7.  **Controle de Acesso:** Registro e validação de permissões para entrada em áreas restritas.
+8.  **Alerta de Acidente:** Sistema de emergência para emissão de alertas críticos imediatos em vermelho.
+9.  **Detalhes Técnicos:** Informações aprofundadas sobre as normas de cada equipamento.
+10. **Perfil e Status:** Visualização de dados do usuário e status da conta.
+
 <div align="center">
-  <img width="392" height="864" alt="Login" src="https://github.com/user-attachments/assets/6d1e76b4-8652-461c-8a75-e68ed386c383" />
-  <img width="392" height="871" alt="Welcome" src="https://github.com/user-attachments/assets/16bf6a8a-c875-40f9-8ac8-3b4210467251" />
-  <img width="397" height="873" alt="Menu" src="https://github.com/user-attachments/assets/dc9c4279-24d2-4b1b-91fa-a8872e9443a1" />
-  <img width="395" height="871" alt="EPI List" src="https://github.com/user-attachments/assets/03f0da55-0ac9-466f-8f57-9273bca3a271" />
-  <img width="392" height="870" alt="Risk Area" src="https://github.com/user-attachments/assets/f7248bc4-e4cd-4b8b-b62d-ed6f261c7caa" />
-  <img width="394" height="869" alt="Damaged EPI" src="https://github.com/user-attachments/assets/a76c5129-2e1a-4caa-abab-1aa53a7b3b63" />
-  <img width="393" height="870" alt="Access Control" src="https://github.com/user-attachments/assets/58bce5ea-ef67-40d1-87a1-1056b8799d9a" />
-  <img width="395" height="865" alt="Report" src="https://github.com/user-attachments/assets/63aa44a1-39ee-458d-8955-8acaa91d5fdf" />
-  <img width="391" height="872" alt="Details" src="https://github.com/user-attachments/assets/75a72d4a-0907-4ccd-963e-f902f789f27f" />
-  <img width="393" height="871" alt="Profile" src="https://github.com/user-attachments/assets/a8b65561-5ae3-495c-adde-a66a0b35ae05" />
+  <img width="200" alt="Login" src="https://github.com/user-attachments/assets/6d1e76b4-8652-461c-8a75-e68ed386c383" />
+  <img width="200" alt="Welcome" src="https://github.com/user-attachments/assets/16bf6a8a-c875-40f9-8ac8-3b4210467251" />
+  <img width="200" alt="Menu" src="https://github.com/user-attachments/assets/dc9c4279-24d2-4b1b-91fa-a8872e9443a1" />
+  <img width="200" alt="EPI List" src="https://github.com/user-attachments/assets/03f0da55-0ac9-466f-8f57-9273bca3a271" />
+  <img width="200" alt="Risk Area" src="https://github.com/user-attachments/assets/f7248bc4-e4cd-4b8b-b62d-ed6f261c7caa" />
+  <br/>
+  <img width="200" alt="Damaged EPI" src="https://github.com/user-attachments/assets/a76c5129-2e1a-4caa-abab-1aa53a7b3b63" />
+  <img width="200" alt="Access Control" src="https://github.com/user-attachments/assets/58bce5ea-ef67-40d1-87a1-1056b8799d9a" />
+  <img width="200" alt="Report" src="https://github.com/user-attachments/assets/63aa44a1-39ee-458d-8955-8acaa91d5fdf" />
+  <img width="200" alt="Details" src="https://github.com/user-attachments/assets/75a72d4a-0907-4ccd-963e-f902f789f27f" />
+  <img width="200" alt="Profile" src="https://github.com/user-attachments/assets/a8b65561-5ae3-495c-adde-a66a0b35ae05" />
 </div>
 
 ## 🛠️ Stack Tecnológica
