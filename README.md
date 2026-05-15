@@ -13,47 +13,38 @@ O **ConfiSafeMobile** é uma solução Android robusta voltada para a gestão de
 
 ## 📸 Demonstração do App
 
-Abaixo, apresentamos o fluxo principal do aplicativo em formato de lista:
+Abaixo, apresentamos o fluxo principal do aplicativo:
 
 1. **Tela de Login**  
-   <img src="https://github.com/user-attachments/assets/6d1e76b4-8652-461c-8a75-e68ed386c383" width="200">  
-   *Acesso seguro via Firebase Auth utilizando ID de funcionário.*
+   <div align="center"><img width="392" height="864" alt="Login" src="https://github.com/user-attachments/assets/6d1e76b4-8652-461c-8a75-e68ed386c383" /></div>
 
-2. **Boas-vindas**  
-   <img src="https://github.com/user-attachments/assets/16bf6a8a-c875-40f9-8ac8-3b4210467251" width="200">  
-   *Identificação personalizada do colaborador com dados vindos do Firestore.*
+2. **Tela de boas vindas**  
+   Menu de navegação para entrar no local, reportar EPI danificado e reportar acidente.  
+   <div align="center"><img width="392" height="871" alt="Welcome" src="https://github.com/user-attachments/assets/16bf6a8a-c875-40f9-8ac8-3b4210467251" /></div>
 
-3. **Menu Principal**  
-   <img src="https://github.com/user-attachments/assets/dc9c4279-24d2-4b1b-91fa-a8872e9443a1" width="200">  
-   *Dashboard intuitivo para acesso rápido a todas as funcionalidades.*
+3. **Tela de acessar a área de risco**  
+   <div align="center"><img width="397" height="873" alt="Menu" src="https://github.com/user-attachments/assets/dc9c4279-24d2-4b1b-91fa-a8872e9443a1" /></div>
 
-4. **Lista de EPIs**  
-   <img src="https://github.com/user-attachments/assets/03f0da55-0ac9-466f-8f57-9273bca3a271" width="200">  
-   *Consulta de equipamentos obrigatórios específicos para cada setor.*
+4. **Tela de confirmar os epis que estão sendo usados**  
+   <div align="center"><img width="395" height="871" alt="EPI List" src="https://github.com/user-attachments/assets/03f0da55-0ac9-466f-8f57-9273bca3a271" /></div>
 
-5. **Áreas de Risco**  
-   <img src="https://github.com/user-attachments/assets/f7248bc4-e4cd-4b8b-b62d-ed6f261c7caa" width="200">  
-   *Catálogo de zonas de periculosidade monitoradas pelo sistema.*
+5. **Tela do cronômetro dentro da área restrita antes de iniciar o acesso**  
+   <div align="center"><img width="392" height="870" alt="Risk Area" src="https://github.com/user-attachments/assets/f7248bc4-e4cd-4b8b-b62d-ed6f261c7caa" /></div>
 
-6. **EPI Danificado**  
-   <img src="https://github.com/user-attachments/assets/a76c5129-2e1a-4caa-abab-1aa53a7b3b63" width="200">  
-   *Formulário para reporte de danos com filtros inteligentes e anexo de foto.*
+6. **Tela do cronômetro dentro da área restrita depois de iniciar o acesso**  
+   <div align="center"><img width="394" height="869" alt="Damaged EPI" src="https://github.com/user-attachments/assets/a76c5129-2e1a-4caa-abab-1aa53a7b3b63" /></div>
 
-7. **Controle de Acesso**  
-   <img src="https://github.com/user-attachments/assets/58bce5ea-ef67-40d1-87a1-1056b8799d9a" width="200">  
-   *Validação de entrada e registro de presença em áreas restritas.*
+7. **Tela do formulário para reportar epis danificados**  
+   <div align="center"><img width="393" height="870" alt="Access Control" src="https://github.com/user-attachments/assets/58bce5ea-ef67-40d1-87a1-1056b8799d9a" /></div>
 
-8. **Alerta de Acidente**  
-   <img src="https://github.com/user-attachments/assets/63aa44a1-39ee-458d-8955-8acaa91d5fdf" width="200">  
-   *Interface de emergência para emissão de alertas críticos imediatos.*
+8. **Tela para selecionar a área do epi danificado**  
+   <div align="center"><img width="395" height="865" alt="Report" src="https://github.com/user-attachments/assets/63aa44a1-39ee-458d-8955-8acaa91d5fdf" /></div>
 
-9. **Detalhes Técnicos**  
-   <img src="https://github.com/user-attachments/assets/75a72d4a-0907-4ccd-963e-f902f789f27f" width="200">  
-   *Informações técnicas e normas de segurança para cada equipamento.*
+9. **Tela para selecionar o epi danificado**  
+   <div align="center"><img width="391" height="872" alt="Details" src="https://github.com/user-attachments/assets/75a72d4a-0907-4ccd-963e-f902f789f27f" /></div>
 
-10. **Perfil e Status**  
-    <img src="https://github.com/user-attachments/assets/a8b65561-5ae3-495c-adde-a66a0b35ae05" width="200">  
-    *Visualização dos dados da conta e informações do desenvolvedor.*
+10. **Tela de reportar acidente**  
+    <div align="center"><img width="393" height="871" alt="Profile" src="https://github.com/user-attachments/assets/a8b65561-5ae3-495c-adde-a66a0b35ae05" /></div>
 
 ## 🛠️ Stack Tecnológica
 
