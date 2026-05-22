@@ -1,0 +1,46 @@
+# ==========================================
+# DOCKERIGNORE - BACKEND
+# ==========================================
+# Arquivos ignorados ao copiar para o container
+# Reduz tamanho da imagem e tempo de build
+
+# Build local (será refeito no container)
+target
+build
+*.jar
+*.war
+
+# Arquivos de desenvolvimento
+.git
+.gitignore
+.env
+
+# IDE
+.vscode
+.idea
+*.iml
+.project
+.classpath
+.settings
+
+# Logs
+*.log
+logs
+
+# Documentação
+README.md
+*.md
+
+# Maven wrapper (container já tem Maven)
+.mvn
+mvnw
+mvnw.cmd
+
+# Docker (não precisa copiar para dentro do container)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

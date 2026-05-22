@@ -1,0 +1,19 @@
+# ==========================================
+# DOCKERIGNORE - ROOT PROJECT
+# ==========================================
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# Documentação
+*.md
+docs
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

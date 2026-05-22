@@ -1,0 +1,539 @@
+/* ===== PÁGINA DE SERVIÇOS - ESTILO CORPORATIVO SIMPLES ===== */
+
+/* Reset */
+.servicos-page-simple {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1f2937;
+}
+
+/* ===== HERO SIMPLES ===== */
+.hero-simple {
+  padding: 140px 24px 80px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  text-align: center;
+}
+
+.hero-simple-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 16px 0;
+}
+
+.hero-simple-content p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===== SEÇÃO DE SERVIÇOS ===== */
+.servicos-section {
+  padding: 80px 24px;
+  background: #ffffff;
+}
+
+.servicos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicos-grid-simple {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+/* Card Simples */
+.servico-card-simple {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+
+.servico-card-simple:hover {
+  border-color: #00a454;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon-simple {
+  width: 48px;
+  height: 48px;
+  background: #f0fdf4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-icon-simple svg {
+  width: 24px;
+  height: 24px;
+  color: #00a454;
+}
+
+.servico-card-simple h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.servico-card-simple > p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.servico-card-simple ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.servico-card-simple ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.servico-card-simple ul li svg {
+  width: 16px;
+  height: 16px;
+  color: #00a454;
+  flex-shrink: 0;
+}
+
+.btn-simple {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #00a454;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.btn-simple:hover {
+  background: #008f47;
+}
+
+/* ===== DIFERENCIAIS ===== */
+.diferenciais-simple {
+  padding: 80px 24px;
+  background: #f9fafb;
+}
+
+.diferenciais-container-simple {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.diferenciais-simple h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 48px 0;
+}
+
+.diferenciais-grid-simple {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.diferencial-item {
+  text-align: center;
+}
+
+.diferencial-numero {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00a454;
+  line-height: 1;
+}
+
+.diferencial-texto {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* ===== FAQ ===== */
+.faq-simple {
+  padding: 80px 24px;
+  background: #ffffff;
+}
+
+.faq-container-simple {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-simple h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.faq-list-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item-simple {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-item-simple:hover {
+  border-color: #d1d5db;
+}
+
+.faq-item-simple.expanded {
+  border-color: #00a454;
+  background: #ffffff;
+}
+
+.faq-question-simple {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.faq-question-simple span:first-child {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.faq-item-simple.expanded .faq-icon {
+  color: #00a454;
+}
+
+.faq-answer-simple {
+  padding: 0 24px 20px;
+}
+
+.faq-answer-simple p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== CTA ===== */
+.cta-simple {
+  padding: 80px 24px;
+  background: #1a365d;
+  text-align: center;
+}
+
+.cta-container-simple {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-simple h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.cta-container-simple > p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 32px 0;
+}
+
+.cta-buttons-simple {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-simple {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #00a454;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.btn-primary-simple:hover {
+  background: #008f47;
+}
+
+.btn-secondary-simple {
+  display: inline-block;
+  padding: 14px 28px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-simple:hover {
+  background: #ffffff;
+  color: #1a365d;
+}
+
+/* ===== FOOTER PROFISSIONAL ===== */
+.footer-pro {
+  background: #111827;
+  padding: 64px 24px 0;
+}
+
+.footer-pro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-pro-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #374151;
+}
+
+.footer-pro-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.footer-logo span {
+  display: inline;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: #1f2937;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: #00a454;
+  color: #ffffff;
+}
+
+.footer-pro-col h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 20px 0;
+}
+
+.footer-pro-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-pro-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-pro-col ul li a {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-pro-col ul li a:hover {
+  color: #34d399;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.contact-list li svg {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal a {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: #9ca3af;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .diferenciais-grid-simple {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .footer-pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-simple {
+    padding: 120px 24px 60px;
+  }
+
+  .hero-simple-content h1 {
+    font-size: 2rem;
+  }
+
+  .servicos-section,
+  .diferenciais-simple,
+  .faq-simple,
+  .cta-simple {
+    padding: 60px 24px;
+  }
+
+  .servicos-grid-simple {
+    grid-template-columns: 1fr;
+  }
+
+  .diferenciais-grid-simple {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diferencial-numero {
+    font-size: 2rem;
+  }
+
+  .cta-buttons-simple {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary-simple,
+  .btn-secondary-simple {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .footer-pro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-legal {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-simple-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .servico-card-simple {
+    padding: 24px;
+  }
+
+  .diferenciais-simple h2,
+  .faq-simple h2,
+  .cta-simple h2 {
+    font-size: 1.5rem;
+  }
+}

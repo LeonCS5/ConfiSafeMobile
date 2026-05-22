@@ -1,0 +1,45 @@
+# ==========================================
+# DOCKERIGNORE - FRONTEND
+# ==========================================
+# Arquivos ignorados ao copiar para o container
+# Reduz tamanho da imagem e tempo de build
+
+# Dependências (serão reinstaladas no container)
+node_modules
+
+# Build local (será refeito no container)
+build
+dist
+
+# Arquivos de desenvolvimento
+.git
+.gitignore
+.env.local
+.env.development
+.env.test
+
+# Logs e cache
+npm-debug.log*
+.npm
+.eslintcache
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Documentação
+README.md
+*.md
+
+# Testes
+coverage
+__tests__
+*.test.js
+*.spec.js
+
+# Docker (não precisa copiar para dentro do container)
+Dockerfile
+docker-compose.yml
+.dockerignore

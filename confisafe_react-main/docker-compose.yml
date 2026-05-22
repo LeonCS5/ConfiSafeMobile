@@ -1,0 +1,131 @@
+# ==========================================
+# DOCKER COMPOSE - CONFISAFE
+# ==========================================
+# Orquestra todos os containers do projeto:
+# - MySQL 8.0 (Banco de Dados)
+# - Backend Spring Boot (API)
+# - Frontend React (Interface)
+# ==========================================
+# COMANDOS:
+#   Subir tudo:     docker compose up
+#   Subir em background: docker compose up -d
+#   Parar tudo:     docker compose down
+#   Ver logs:       docker compose logs -f
+#   Rebuild:        docker compose up --build
+# ==========================================
+
+services:
+  # ==========================================
+  # MYSQL - BANCO DE DADOS
+  # ==========================================
+  mysql:
+    image: mysql:8.0
+    container_name: confisafe-mysql
+    restart: unless-stopped
+    
+    # Variáveis de ambiente do MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: confisafe_db
+      MYSQL_USER: confisafe
+      MYSQL_PASSWORD: confisafe123
+    
+    # Porta exposta (host:container)
+    ports:
+      - "3306:3306"
+    
+    # Volume para persistir dados
+    volumes:
+      - mysql_data:/var/lib/mysql
+    
+    # Rede interna
+    networks:
+      - confisafe-network
+    
+    # Health check do MySQL
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+  # ==========================================
+  # BACKEND - SPRING BOOT API
+  # ==========================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: confisafe-backend
+    restart: unless-stopped
+    
+    # Variáveis de ambiente (sobrescrevem application.properties)
+    environment:
+      # Conexão com MySQL (usa nome do container)
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/confisafe_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root123
+      
+      # Hibernate
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "false"
+      
+      # JWT (troque em produção!)
+      JWT_SECRET: ChaveSecretaSuperSeguraParaConfisafe2025MudeEmProducaoComPeloMenos32Caracteres
+      JWT_EXPIRATION: 86400000
+      
+      # Profile Spring
+      SPRING_PROFILES_ACTIVE: docker
+    
+    # Porta exposta
+    ports:
+      - "8080:8080"
+    
+    # Depende do MySQL estar saudável
+    depends_on:
+      mysql:
+        condition: service_healthy
+    
+    # Rede interna
+    networks:
+      - confisafe-network
+
+  # ==========================================
+  # FRONTEND - REACT + NGINX
+  # ==========================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: http://localhost:8080/api
+    container_name: confisafe-frontend
+    restart: unless-stopped
+    
+    # Porta exposta (80 no container -> 3000 no host)
+    ports:
+      - "3000:80"
+    
+    # Depende do backend
+    depends_on:
+      - backend
+    
+    # Rede interna
+    networks:
+      - confisafe-network
+
+# ==========================================
+# NETWORKS - REDE INTERNA
+# ==========================================
+networks:
+  confisafe-network:
+    driver: bridge
+    name: confisafe-network
+
+# ==========================================
+# VOLUMES - DADOS PERSISTENTES
+# ==========================================
+volumes:
+  mysql_data:
+    name: confisafe-mysql-data

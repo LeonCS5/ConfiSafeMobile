@@ -1,0 +1,61 @@
+/* =========================
+   RESET BÁSICO
+   ========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   CONFIGURAÇÃO GERAL
+   ========================= */
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--body-gradient);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Links básicos */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Imagens responsivas básicas */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   PAGE LOADER (Lazy Loading)
+   ========================= */
+.page-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a0f1a;
+  color: #fff;
+  font-size: 18px;
+  gap: 12px;
+}
+
+.page-loader-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 164, 84, 0.3);
+  border-top: 3px solid #00a454;
+  border-radius: 50%;
+  animation: pageLoaderSpin 1s linear infinite;
+}
+
+@keyframes pageLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

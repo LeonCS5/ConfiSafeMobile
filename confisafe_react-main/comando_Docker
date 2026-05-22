@@ -1,0 +1,4 @@
+Situação  ||	Comando
+Mesmo PC (já buildou) ==>	docker compose up
+PC novo ==>	docker compose up --build
+Mudou código ==>	docker compose up --build
