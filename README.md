@@ -11,6 +11,11 @@ O **ConfiSafeMobile** é uma solução Android robusta voltada para a gestão de
 *   **Controle de Acesso:** Registro e validação de entrada em locais restritos.
 *   **Relatórios em Tempo Real:** Sincronização de dados via Firebase Firestore para análise administrativa.
 
+## 🔐 Acessos de Teste
+
+Para facilitar os testes do aplicativo, utilize os usuários e senhas pré-configurados:
+👉 **[Clique aqui para ver a lista de Logins e Senhas](LOGINS.md)**
+
 ## 📸 Demonstração do App
 
 Abaixo, apresentamos o fluxo principal do aplicativo:
